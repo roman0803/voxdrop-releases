@@ -4,6 +4,8 @@
 
 Powered by Whisper-Large-v3-Turbo (Groq API) for transcription, and optionally Llama 3.3 for post-processing (editorial polish, rephrasing, emojis, translation, custom prompts).
 
+> **About the name.** *Vox* is Latin for *voice*; *drop* captures what the app does: your spoken words are dropped directly at the cursor as text – no clipboard juggling, no extra window.
+
 ---
 
 ## Download
