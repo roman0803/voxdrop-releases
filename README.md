@@ -1,86 +1,86 @@
 # VoxDrop
 
-**Menu-Bar Speech-to-Text für macOS** – drücke einen Hotkey, sprich, und der transkribierte Text wird direkt ins aktive Fenster eingefügt.
+**Menu-bar Speech-to-Text for macOS** – press a hotkey, speak, and the transcribed text is inserted directly into the focused app.
 
-Angetrieben von Whisper-Large-v3-Turbo (Groq API) für die Transkription und optional Llama 3.3 für Nachbearbeitung (Lektorat, Umformulierung, Emojis, Übersetzung, eigene Prompts).
+Powered by Whisper-Large-v3-Turbo (Groq API) for transcription, and optionally Llama 3.3 for post-processing (editorial polish, rephrasing, emojis, translation, custom prompts).
 
 ---
 
 ## Download
 
-Die aktuelle Version findest du unter [**Releases**](https://github.com/roman0803/voxdrop-releases/releases/latest):
+The latest version is on the [**Releases**](https://github.com/roman0803/voxdrop-releases/releases/latest) page:
 
-- **`VoxDrop-X.Y.Z.dmg`** – empfohlen, installiere per Drag nach `/Applications`
-- **`VoxDrop-X.Y.Z.zip`** – Fallback, entpackte `.app` manuell verschieben
-- **`*.sha256`** – Prüfsummen zur Integritätsprüfung
+- **`VoxDrop-X.Y.Z.dmg`** – recommended, drag into `/Applications`
+- **`VoxDrop-X.Y.Z.zip`** – fallback, unpacked `.app` to move manually
+- **`*.sha256`** – checksums for integrity verification
 
 ---
 
 ## Installation
 
-1. **DMG herunterladen** und öffnen.
-2. **VoxDrop.app nach `/Applications` ziehen.**
-3. **Beim ersten Start (wichtig – die App ist nicht mit Apple Developer ID signiert):**
-   - Rechtsklick auf VoxDrop in `/Applications` → **"Öffnen"** → im Dialog erneut **"Öffnen"** bestätigen.
-   - Falls das nicht hilft (*"VoxDrop ist beschädigt"*), im Terminal ausführen:
+1. **Download the DMG** and open it.
+2. **Drag VoxDrop.app into `/Applications`.**
+3. **On first launch (important – the app is not signed with an Apple Developer ID):**
+   - Right-click VoxDrop in `/Applications` → **"Open"** → confirm **"Open"** in the dialog.
+   - If that doesn't work (*"VoxDrop is damaged"*), run in Terminal:
      ```bash
      xattr -cr /Applications/VoxDrop.app
      ```
-4. **Systemeinstellungen → Datenschutz & Sicherheit:**
-   - **Mikrofon** für VoxDrop aktivieren
-   - **Bedienungshilfen** für VoxDrop aktivieren (für globale Hotkey-Erkennung)
-5. **Menu-Bar-Icon** anklicken → **Einstellungen** → **Groq API Key** eintragen.
-   API-Key erstellen: [console.groq.com/keys](https://console.groq.com/keys)
+4. **System Settings → Privacy & Security:**
+   - Enable **Microphone** for VoxDrop
+   - Enable **Accessibility** for VoxDrop (required for global hotkey detection)
+5. Click the **menu-bar icon** → **Settings** → enter your **Groq API key**.
+   Create a key at: [console.groq.com/keys](https://console.groq.com/keys)
 
 ---
 
-## Modi
+## Modes
 
-| Modus | Beschreibung | Default-Hotkey |
-|-------|--------------|----------------|
-| **Standard** | Rohtranskription ohne Nachbearbeitung | FN + ⌃ |
-| **Plus** | Lektorat, grammatikalisch geglätteter Text | FN + ⌥ |
-| **Rage Mode** | Emotionale Nachrichten sachlich umformulieren | FN + ⌘ |
-| **Emoji** | Text mit passenden Emojis anreichern | FN + ⇧ |
-| **Übersetzen** | Deutsch → Englisch (casual, chat-like) | FN + ⌃⌥ |
-| **Custom** | Dein eigener System-Prompt | (nicht belegt – frei konfigurierbar) |
+| Mode | Description | Default hotkey |
+|------|-------------|----------------|
+| **Standard** | Raw transcription, no post-processing | FN + ⌃ |
+| **Plus** | Editorial polish, grammar-corrected text | FN + ⌥ |
+| **Rage Mode** | Rephrase emotional messages as calm & professional | FN + ⌘ |
+| **Emoji** | Enrich text with matching emojis | FN + ⇧ |
+| **Translate** | German → English (casual, chat-like) | FN + ⌃⌥ |
+| **Custom** | Your own system prompt | *(unbound – configure yourself)* |
 
-Alle Hotkeys sind in den Einstellungen frei belegbar (Modifier-Kombi oder FN + Taste).
-
----
-
-## Aufnahme-Modi
-
-- **Hold-Modus:** Hotkey halten → sprechen → loslassen → Text wird eingefügt
-- **Toggle-Modus:** Hotkey drücken → sprechen → **FN** zum Stoppen (alternative Beenden-Taste in Einstellungen wählbar)
+All hotkeys are freely configurable in the settings (modifier combo or `FN + key`).
 
 ---
 
-## Anforderungen
+## Recording Modes
 
-- macOS **14.0** (Sonoma) oder neuer
-- Groq API Key (kostenlos erstellbar)
-- Mikrofon- und Bedienungshilfen-Freigabe
+- **Hold mode:** press and hold the hotkey → speak → release → text is inserted
+- **Toggle mode:** press the hotkey → speak → press **FN** to stop (an alternate stop key can be set in settings)
 
 ---
 
-## Sicherheit & Signatur
+## Requirements
 
-Die App ist **ad-hoc signiert**, nicht über eine Apple Developer ID und nicht notarisiert. Das bedeutet, dass macOS beim ersten Start warnt. Der Installations-Workaround (Schritt 3 oben) ist Standard für Open-Source-macOS-Apps ohne Developer-Account.
+- macOS **14.0** (Sonoma) or newer
+- Groq API key (free tier available)
+- Microphone and Accessibility permissions
 
-Wer dem nicht vertraut, kann die SHA256-Prüfsumme vergleichen:
+---
+
+## Security & Code Signing
+
+The app is **ad-hoc signed**, not with an Apple Developer ID, and not notarized. This means macOS will warn on first launch. The installation workaround (step 3 above) is standard for open-source macOS apps without a paid developer account.
+
+If you'd rather verify the binary, compare the SHA256 checksum:
 
 ```bash
 shasum -a 256 ~/Downloads/VoxDrop-0.9.0.dmg
 ```
 
-Der Wert muss mit dem Inhalt der `.sha256`-Datei aus der Release übereinstimmen.
+The result must match the contents of the `.sha256` file from the release.
 
 ---
 
 ## Bugs & Feedback
 
-Bitte [Issues](https://github.com/roman0803/voxdrop-releases/issues/new/choose) in diesem Repo öffnen. Es gibt zwei Vorlagen:
+Please open an [Issue](https://github.com/roman0803/voxdrop-releases/issues/new/choose) in this repo. Two templates are available:
 
-- **Bug melden** – wenn etwas nicht funktioniert
-- **Feature vorschlagen** – wenn dir eine Idee fehlt
+- **Bug report** – something isn't working
+- **Feature request** – an idea or improvement

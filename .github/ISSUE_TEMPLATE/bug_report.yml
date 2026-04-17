@@ -1,18 +1,18 @@
-name: Bug melden
-description: Etwas funktioniert nicht wie erwartet
+name: Bug Report
+description: Something isn't working as expected
 title: "[Bug]: "
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        Danke, dass du dir die Zeit nimmst, einen Bug zu melden! Je genauer du beschreibst, was passiert ist, desto schneller kann es behoben werden.
+        Thanks for taking the time to report a bug! The more precise you are about what happened, the faster it can be fixed.
 
   - type: input
     id: version
     attributes:
-      label: VoxDrop-Version
-      description: Zu sehen in der Menu-Bar → Einstellungen, oder im Dateinamen der DMG
+      label: VoxDrop version
+      description: Visible in the menu-bar → Settings, or in the DMG filename
       placeholder: "0.9.0"
     validations:
       required: true
@@ -20,8 +20,8 @@ body:
   - type: input
     id: macos
     attributes:
-      label: macOS-Version
-      description: Apfel-Menü → "Über diesen Mac"
+      label: macOS version
+      description: Apple menu → "About This Mac"
       placeholder: "14.4 (Sonoma)"
     validations:
       required: true
@@ -29,41 +29,41 @@ body:
   - type: textarea
     id: what-happened
     attributes:
-      label: Was ist passiert?
-      description: Was hast du erwartet, was ist stattdessen passiert?
+      label: What happened?
+      description: What did you expect, and what happened instead?
       placeholder: |
-        Ich habe FN + Control gedrückt und gesprochen. Die Aufnahme startete, aber nach dem Loslassen wurde kein Text eingefügt.
+        I pressed FN + Control and spoke. The recording started, but after releasing, no text was inserted.
     validations:
       required: true
 
   - type: textarea
     id: steps
     attributes:
-      label: Schritte zum Reproduzieren
+      label: Steps to reproduce
       placeholder: |
-        1. VoxDrop starten
-        2. In TextEdit klicken
-        3. FN + Control drücken und halten
-        4. "Hallo Welt" sagen
-        5. Loslassen
+        1. Launch VoxDrop
+        2. Click into TextEdit
+        3. Press and hold FN + Control
+        4. Say "Hello world"
+        5. Release
     validations:
       required: false
 
   - type: dropdown
     id: mode
     attributes:
-      label: Aufnahme-Modus
+      label: Recording mode
       options:
-        - Hold-Modus (Taste halten)
-        - Toggle-Modus (drücken → FN zum Stoppen)
-        - Weiß nicht
+        - Hold mode (press and hold)
+        - Toggle mode (press → FN to stop)
+        - Not sure
     validations:
       required: false
 
   - type: textarea
     id: additional
     attributes:
-      label: Zusätzliche Infos
-      description: Screenshots, Console-Logs, andere Besonderheiten
+      label: Additional info
+      description: Screenshots, console logs, or anything else that might help
     validations:
       required: false

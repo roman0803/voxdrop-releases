@@ -2,23 +2,23 @@
 
 ## 0.9.0 – 2026-04-17
 
-Erste öffentliche Beta-Release.
+First public beta release.
 
 ### Features
-- **Modi:** Standard, Plus (Lektorat), Rage (sachlich umformulieren), Emoji, Übersetzen (DE → EN), **Custom** (eigener System-Prompt)
-- **Hotkeys:** frei belegbar pro Modus (Modifier oder FN + Taste), per Klick im Einstellungsfeld aufnehmbar
-- **Aufnahme-Modi:** Hold-Modus (Taste halten) oder Toggle-Modus (drücken → sprechen → FN zum Stoppen)
-- **Dynamic-Island-Pille** in der Notch (mit Hardware-Notch verschmelzend) oder schwebend auf Nicht-Notch-Displays
-- **Wörterbuch** zum Ersetzen häufiger Fehltranskriptionen
-- **Sound-Feedback** mit auswählbaren System-Sounds
-- **Text-Injection** via Clipboard-Paste ins aktive Fenster
+- **Modes:** Standard, Plus (editorial polish), Rage (rephrase emotional to professional), Emoji, Translate (DE → EN), **Custom** (your own system prompt)
+- **Hotkeys:** freely configurable per mode (modifier combo or `FN + key`), recordable by clicking the settings field
+- **Recording modes:** hold mode (press and hold) or toggle mode (press → speak → FN to stop)
+- **Dynamic-Island pill** in the notch (merging with the hardware notch) or floating on non-notch displays
+- **Dictionary** for substituting frequent mistranscriptions
+- **Sound feedback** with selectable system sounds
+- **Text injection** via clipboard paste into the focused window
 
-### Technisch
-- macOS 14+ (Sonoma oder neuer)
-- Menu-Bar-App ohne Dock-Icon
-- Groq API (Whisper-Large-v3-Turbo + Llama 3.3) – eigener API-Key erforderlich
-- Swift 5.9, SwiftUI + AppKit, keine externen Dependencies
+### Technical
+- macOS 14+ (Sonoma or newer)
+- Menu-bar app, no Dock icon
+- Groq API (Whisper-Large-v3-Turbo + Llama 3.3) – bring your own API key
+- Swift 5.9, SwiftUI + AppKit, zero external dependencies
 
-### Bekannte Einschränkungen
-- Nicht signiert mit Apple Developer ID → erster Start erfordert Rechtsklick → "Öffnen" oder `xattr -cr /Applications/VoxDrop.app`
-- Benötigt Berechtigungen für Mikrofon und Bedienungshilfen
+### Known Limitations
+- Not signed with an Apple Developer ID → first launch requires right-click → "Open" or `xattr -cr /Applications/VoxDrop.app`
+- Requires Microphone and Accessibility permissions

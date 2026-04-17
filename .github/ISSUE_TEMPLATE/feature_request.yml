@@ -1,43 +1,43 @@
-name: Feature vorschlagen
-description: Idee für eine neue Funktion oder Verbesserung
+name: Feature Request
+description: Idea for a new feature or improvement
 title: "[Feature]: "
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        Danke für deinen Vorschlag! Beschreib möglichst konkret, was dir vorschwebt.
+        Thanks for your suggestion! Please describe what you have in mind as concretely as possible.
 
   - type: textarea
     id: problem
     attributes:
-      label: Welches Problem löst die Idee?
-      description: Was fehlt dir gerade, oder was nervt im aktuellen Workflow?
+      label: What problem does this solve?
+      description: What are you missing today, or what frustrates you in the current workflow?
       placeholder: |
-        Wenn ich Diktate mache, muss ich manchmal zwischen Deutsch und Englisch wechseln. Aktuell brauche ich dafür zwei Modi.
+        When dictating, I sometimes switch between German and English. Right now I need two different modes for that.
     validations:
       required: true
 
   - type: textarea
     id: solution
     attributes:
-      label: Wie könnte die Lösung aussehen?
+      label: What could the solution look like?
       placeholder: |
-        Ein Modus "Auto-Erkennung" der die Sprache selbst bestimmt, oder ein Button in der Menu-Bar zum schnellen Umschalten.
+        An "auto-detect" mode that picks the language itself, or a menu-bar button to toggle quickly.
     validations:
       required: true
 
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternativen, die du in Betracht gezogen hast
+      label: Alternatives you've considered
     validations:
       required: false
 
   - type: textarea
     id: additional
     attributes:
-      label: Zusätzliche Infos
-      description: Mockups, Links zu ähnlichen Apps, etc.
+      label: Additional info
+      description: Mockups, links to similar apps, etc.
     validations:
       required: false
