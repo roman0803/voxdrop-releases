@@ -80,4 +80,7 @@ Der Wert muss mit dem Inhalt der `.sha256`-Datei aus der Release übereinstimmen
 
 ## Bugs & Feedback
 
-Bitte [Issues](https://github.com/roman0803/voxdrop-releases/issues) im diesem Repo öffnen.
+Bitte [Issues](https://github.com/roman0803/voxdrop-releases/issues/new/choose) in diesem Repo öffnen. Es gibt zwei Vorlagen:
+
+- **Bug melden** – wenn etwas nicht funktioniert
+- **Feature vorschlagen** – wenn dir eine Idee fehlt

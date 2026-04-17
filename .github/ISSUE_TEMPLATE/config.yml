@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Groq API Key erstellen
+    url: https://console.groq.com/keys
+    about: Falls du einen API Key brauchst – das ist kein Bug
+  - name: Installationsprobleme
+    url: https://github.com/roman0803/voxdrop-releases#installation
+    about: Gatekeeper-Umgehung ist in der README erklärt

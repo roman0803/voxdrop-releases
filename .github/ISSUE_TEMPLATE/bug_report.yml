@@ -1,0 +1,69 @@
+name: Bug melden
+description: Etwas funktioniert nicht wie erwartet
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke, dass du dir die Zeit nimmst, einen Bug zu melden! Je genauer du beschreibst, was passiert ist, desto schneller kann es behoben werden.
+
+  - type: input
+    id: version
+    attributes:
+      label: VoxDrop-Version
+      description: Zu sehen in der Menu-Bar → Einstellungen, oder im Dateinamen der DMG
+      placeholder: "0.9.0"
+    validations:
+      required: true
+
+  - type: input
+    id: macos
+    attributes:
+      label: macOS-Version
+      description: Apfel-Menü → "Über diesen Mac"
+      placeholder: "14.4 (Sonoma)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Was ist passiert?
+      description: Was hast du erwartet, was ist stattdessen passiert?
+      placeholder: |
+        Ich habe FN + Control gedrückt und gesprochen. Die Aufnahme startete, aber nach dem Loslassen wurde kein Text eingefügt.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Schritte zum Reproduzieren
+      placeholder: |
+        1. VoxDrop starten
+        2. In TextEdit klicken
+        3. FN + Control drücken und halten
+        4. "Hallo Welt" sagen
+        5. Loslassen
+    validations:
+      required: false
+
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Aufnahme-Modus
+      options:
+        - Hold-Modus (Taste halten)
+        - Toggle-Modus (drücken → FN zum Stoppen)
+        - Weiß nicht
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Zusätzliche Infos
+      description: Screenshots, Console-Logs, andere Besonderheiten
+    validations:
+      required: false

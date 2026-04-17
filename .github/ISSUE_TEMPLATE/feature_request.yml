@@ -1,0 +1,43 @@
+name: Feature vorschlagen
+description: Idee für eine neue Funktion oder Verbesserung
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke für deinen Vorschlag! Beschreib möglichst konkret, was dir vorschwebt.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Welches Problem löst die Idee?
+      description: Was fehlt dir gerade, oder was nervt im aktuellen Workflow?
+      placeholder: |
+        Wenn ich Diktate mache, muss ich manchmal zwischen Deutsch und Englisch wechseln. Aktuell brauche ich dafür zwei Modi.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Wie könnte die Lösung aussehen?
+      placeholder: |
+        Ein Modus "Auto-Erkennung" der die Sprache selbst bestimmt, oder ein Button in der Menu-Bar zum schnellen Umschalten.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativen, die du in Betracht gezogen hast
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Zusätzliche Infos
+      description: Mockups, Links zu ähnlichen Apps, etc.
+    validations:
+      required: false
