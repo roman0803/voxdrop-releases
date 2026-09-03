@@ -5,12 +5,21 @@
     <description>Updates für VoxDrop.</description>
     <language>de</language>
     <item>
+      <title>Version 0.10.0</title>
+      <pubDate>Thu, 03 Sep 2026 08:42:21 +0000</pubDate>
+      <sparkle:version>14</sparkle:version>
+      <sparkle:shortVersionString>0.10.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li><strong>Prompt-Presets für den Custom-Modus.</strong> Statt eines einzigen Prompts jetzt mehrere benannte – etwa „Mail", „Slack", „Ticket" –, von denen einer aktiv ist. Umschaltbar in den Einstellungen und ab zwei Presets auch direkt im Popover. Ein vorhandener Custom-Prompt wird beim ersten Start automatisch als Preset übernommen.</li><li><strong>Nochmal verarbeiten.</strong> Jeder Eintrag im Verlauf lässt sich ohne neues Diktat durch einen anderen Modus schicken. Das Ergebnis landet in der Zwischenablage und als neuer Verlaufseintrag, markiert mit „↻".</li><li>7 weitere Tests (Preset-Speicherung, aktives Preset, Rückfall bei verwaister ID, Migration des alten Prompts). Gesamt 28.</li></ul>]]></description>
+      <enclosure url="https://github.com/roman0803/voxdrop-releases/releases/download/v0.10.0/VoxDrop-0.10.0.zip" type="application/octet-stream" length="1976411" sparkle:edSignature="mD2CWlWku9oYTL7baxFQNFlTV1n8vhN3Wn2kQK28j4rrLbLrYwgLz8nCsgdMmVtjiPwtHHXjScW0J7/8kyNyBQ==" />
+    </item>
+    <item>
       <title>Version 0.9.9</title>
       <pubDate>Thu, 03 Sep 2026 08:02:20 +0000</pubDate>
       <sparkle:version>11</sparkle:version>
       <sparkle:shortVersionString>0.9.9</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<ul><li><strong>API-Key bleibt auf diesem Gerät.</strong> Der Schlüsselbund-Eintrag nutzte <code>kSecAttrAccessibleAfterFirstUnlock</code> und konnte damit in Backups wandern; jetzt <code>…ThisDeviceOnly</code>. Bestehende Installationen werden beim Start einmalig migriert – der Schlüssel muss nicht neu eingegeben werden.</li><li><strong>Verwaiste Aufnahmen werden aufgeräumt.</strong> Nach einem Absturz blieb die Temp-Datei liegen. Beim Start werden <code>voxdrop_*.m4a</code> entfernt, und laufende Aufnahmen bekommen die Dateirechte <code>0600</code>.</li><li><strong>Weniger im System-Log.</strong> Die vollständige Groq-Antwort landete im systemweit lesbaren Unified Log, jetzt auf 500 Zeichen gekürzt. Ein übrig gebliebenes Debug-Log ist entfernt.</li><li><strong>Datenschutzhinweis</strong> in Einstellungen → API: benennt, dass jede Aufnahme an api.groq.com geht, dass die Modi Plus, Emoji, Übersetzen und Custom den Text zusätzlich ans Sprachmodell schicken, und was lokal bleibt.</li></ul>]]></description>
+      <description>&lt;ul&gt;&lt;li&gt;&lt;strong&gt;API-Key bleibt auf diesem Gerät.&lt;/strong&gt; Der Schlüsselbund-Eintrag nutzte &lt;code&gt;kSecAttrAccessibleAfterFirstUnlock&lt;/code&gt; und konnte damit in Backups wandern; jetzt &lt;code&gt;…ThisDeviceOnly&lt;/code&gt;. Bestehende Installationen werden beim Start einmalig migriert – der Schlüssel muss nicht neu eingegeben werden.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Verwaiste Aufnahmen werden aufgeräumt.&lt;/strong&gt; Nach einem Absturz blieb die Temp-Datei liegen. Beim Start werden &lt;code&gt;voxdrop_*.m4a&lt;/code&gt; entfernt, und laufende Aufnahmen bekommen die Dateirechte &lt;code&gt;0600&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Weniger im System-Log.&lt;/strong&gt; Die vollständige Groq-Antwort landete im systemweit lesbaren Unified Log, jetzt auf 500 Zeichen gekürzt. Ein übrig gebliebenes Debug-Log ist entfernt.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Datenschutzhinweis&lt;/strong&gt; in Einstellungen → API: benennt, dass jede Aufnahme an api.groq.com geht, dass die Modi Plus, Emoji, Übersetzen und Custom den Text zusätzlich ans Sprachmodell schicken, und was lokal bleibt.&lt;/li&gt;&lt;/ul&gt;</description>
       <enclosure url="https://github.com/roman0803/voxdrop-releases/releases/download/v0.9.9/VoxDrop-0.9.9.zip" type="application/octet-stream" length="1904486" sparkle:edSignature="MWX3k9/cJn1FY2Zs/PTpoMy6JIhqzSA8OJLt5DQygCajsPXYQ+swZKGl8jSesIBgv7WA/OOMIMCbl/2yR587Cw==" />
     </item>
     <item>
