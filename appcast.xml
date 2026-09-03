@@ -5,12 +5,21 @@
     <description>Updates für VoxDrop.</description>
     <language>de</language>
     <item>
+      <title>Version 0.9.9</title>
+      <pubDate>Thu, 03 Sep 2026 08:02:20 +0000</pubDate>
+      <sparkle:version>11</sparkle:version>
+      <sparkle:shortVersionString>0.9.9</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li><strong>API-Key bleibt auf diesem Gerät.</strong> Der Schlüsselbund-Eintrag nutzte <code>kSecAttrAccessibleAfterFirstUnlock</code> und konnte damit in Backups wandern; jetzt <code>…ThisDeviceOnly</code>. Bestehende Installationen werden beim Start einmalig migriert – der Schlüssel muss nicht neu eingegeben werden.</li><li><strong>Verwaiste Aufnahmen werden aufgeräumt.</strong> Nach einem Absturz blieb die Temp-Datei liegen. Beim Start werden <code>voxdrop_*.m4a</code> entfernt, und laufende Aufnahmen bekommen die Dateirechte <code>0600</code>.</li><li><strong>Weniger im System-Log.</strong> Die vollständige Groq-Antwort landete im systemweit lesbaren Unified Log, jetzt auf 500 Zeichen gekürzt. Ein übrig gebliebenes Debug-Log ist entfernt.</li><li><strong>Datenschutzhinweis</strong> in Einstellungen → API: benennt, dass jede Aufnahme an api.groq.com geht, dass die Modi Plus, Emoji, Übersetzen und Custom den Text zusätzlich ans Sprachmodell schicken, und was lokal bleibt.</li></ul>]]></description>
+      <enclosure url="https://github.com/roman0803/voxdrop-releases/releases/download/v0.9.9/VoxDrop-0.9.9.zip" type="application/octet-stream" length="1904486" sparkle:edSignature="MWX3k9/cJn1FY2Zs/PTpoMy6JIhqzSA8OJLt5DQygCajsPXYQ+swZKGl8jSesIBgv7WA/OOMIMCbl/2yR587Cw==" />
+    </item>
+    <item>
       <title>Version 0.9.8</title>
       <pubDate>Wed, 02 Sep 2026 23:33:13 +0000</pubDate>
       <sparkle:version>10</sparkle:version>
       <sparkle:shortVersionString>0.9.8</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<ul><li><strong>Automatische Updates über Sparkle.</strong> VoxDrop prüft selbst auf neue Versionen, lädt sie, verifiziert die EdDSA-Signatur und installiert sie – kein manuelles DMG-Kopieren mehr. Abschaltbar unter Einstellungen → Info.</li><li><strong>Verlauf der letzten 20 Transkriptionen</strong> (Einstellungen → Verlauf). Gespeichert wird vor dem Einfügen, damit ein fehlgeschlagenes Einfügen den Text nicht mehr vernichtet. Im Popover gibt es „Letzten Text kopieren". Rein lokal, abschaltbar, löschbar.</li><li><strong>Whisper-Vokabular:</strong> Die Ziel-Schreibweisen aus dem Wörterbuch werden der Transkription als <code>prompt</code> mitgegeben und wirken damit auf die Erkennung selbst statt erst auf die Ersetzung danach. Dazu ein freies Vokabular-Feld für Begriffe ohne Ersetzung.</li><li>Der eigene GitHub-API-Update-Check wurde durch Sparkle ersetzt.</li></ul>]]></description>
+      <description>&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Automatische Updates über Sparkle.&lt;/strong&gt; VoxDrop prüft selbst auf neue Versionen, lädt sie, verifiziert die EdDSA-Signatur und installiert sie – kein manuelles DMG-Kopieren mehr. Abschaltbar unter Einstellungen → Info.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Verlauf der letzten 20 Transkriptionen&lt;/strong&gt; (Einstellungen → Verlauf). Gespeichert wird vor dem Einfügen, damit ein fehlgeschlagenes Einfügen den Text nicht mehr vernichtet. Im Popover gibt es „Letzten Text kopieren". Rein lokal, abschaltbar, löschbar.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Whisper-Vokabular:&lt;/strong&gt; Die Ziel-Schreibweisen aus dem Wörterbuch werden der Transkription als &lt;code&gt;prompt&lt;/code&gt; mitgegeben und wirken damit auf die Erkennung selbst statt erst auf die Ersetzung danach. Dazu ein freies Vokabular-Feld für Begriffe ohne Ersetzung.&lt;/li&gt;&lt;li&gt;Der eigene GitHub-API-Update-Check wurde durch Sparkle ersetzt.&lt;/li&gt;&lt;/ul&gt;</description>
       <enclosure url="https://github.com/roman0803/voxdrop-releases/releases/download/v0.9.8/VoxDrop-0.9.8.zip" type="application/octet-stream" length="1896343" sparkle:edSignature="NBxxaVZWooakXmRMe2WIwHC5yU4j26RolGE+3qtUAlZYTAUJLXDyY56T+2gM79qBzb3mrLeT81bqzRhgehCrCA==" />
     </item>
   </channel>
