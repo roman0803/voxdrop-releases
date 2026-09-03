@@ -22,7 +22,7 @@ The latest version is on the [**Releases**](https://github.com/roman0803/voxdrop
 
 1. **Download the DMG** and open it.
 2. **Drag VoxDrop.app into `/Applications`.**
-3. **On first launch (important – the app is not signed with an Apple Developer ID):**
+3. **On first launch (important – the app is signed, but not notarized):**
    - Right-click VoxDrop in `/Applications` → **"Open"** → confirm **"Open"** in the dialog.
    - If that doesn't work (*"VoxDrop is damaged"*), run in Terminal:
      ```bash
@@ -42,7 +42,6 @@ The latest version is on the [**Releases**](https://github.com/roman0803/voxdrop
 |------|-------------|----------------|
 | **Standard** | Raw transcription, no post-processing | FN + ⌃ |
 | **Plus** | Editorial polish, grammar-corrected text | FN + ⌥ |
-| **Rage Mode** | Rephrase emotional messages as calm & professional | FN + ⌘ |
 | **Emoji** | Enrich text with matching emojis | FN + ⇧ |
 | **Translate** | German → English (casual, chat-like) | FN + ⌃⌥ |
 | **Custom** | Your own system prompt | *(unbound – configure yourself)* |
@@ -66,14 +65,31 @@ All hotkeys are freely configurable in the settings (modifier combo or `FN + key
 
 ---
 
+## Updates
+
+From **0.9.8** onwards VoxDrop updates itself. It checks a signed update feed, verifies the
+download's EdDSA signature and installs it in place – no more downloading DMGs by hand.
+
+You can turn the automatic check off or trigger one manually under
+**Settings → Info**.
+
+---
+
 ## Security & Code Signing
 
-The app is **ad-hoc signed**, not with an Apple Developer ID, and not notarized. This means macOS will warn on first launch. The installation workaround (step 3 above) is standard for open-source macOS apps without a paid developer account.
+The app is signed with a stable Apple **Development** certificate (Team `2M4LLPLRLS`), but it is
+**not notarized**. Two consequences:
 
-If you'd rather verify the binary, compare the SHA256 checksum:
+- macOS warns on **first** launch – see step 3 above. This is standard for macOS apps without a
+  paid developer account.
+- Because the signing identity stays the same across versions, macOS keeps your Microphone and
+  Accessibility permissions when you update. Earlier releases were ad-hoc signed and asked for
+  them again every time.
+
+If you'd rather verify the download, compare the SHA256 checksum:
 
 ```bash
-shasum -a 256 ~/Downloads/VoxDrop-0.9.0.dmg
+shasum -a 256 ~/Downloads/VoxDrop-0.9.8.dmg
 ```
 
 The result must match the contents of the `.sha256` file from the release.
