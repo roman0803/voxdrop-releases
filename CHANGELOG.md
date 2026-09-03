@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.10.0 – 2026-09-03
+
+### Features
+- **Prompt-Presets für den Custom-Modus.** Statt eines einzigen Prompts jetzt mehrere benannte – etwa „Mail", „Slack", „Ticket" –, von denen einer aktiv ist. Umschaltbar in den Einstellungen und ab zwei Presets auch direkt im Popover. Ein vorhandener Custom-Prompt wird beim ersten Start automatisch als Preset übernommen.
+- **Nochmal verarbeiten.** Jeder Eintrag im Verlauf lässt sich ohne neues Diktat durch einen anderen Modus schicken. Das Ergebnis landet in der Zwischenablage und als neuer Verlaufseintrag, markiert mit „↻".
+
+### Technical
+- 7 weitere Tests (Preset-Speicherung, aktives Preset, Rückfall bei verwaister ID, Migration des alten Prompts). Gesamt 28.
+
+## 0.9.11 – 2026-09-03
+
+### Features
+- **Transkriptionssprache wählbar** (Einstellungen → Optionen → Transkription). Bisher war `language=de` fest verdrahtet, englisches Diktat wurde also in deutsche Phonetik gezwungen. Neben fünf Sprachen gibt es „Automatisch erkennen", das das Feld weglässt und Whisper selbst entscheiden lässt.
+
+### Technical
+- **Erstes Test-Target mit 21 Tests.** Dafür wurde Logik aus privaten Funktionen am Singleton herausgelöst: `TranscriptFilter` als eigener Typ, `DictionaryManager.substitute(_:using:)` und `vocabularyTerms(entries:extraField:)` als reine Funktionen. Abgedeckt sind Wörterbuch-Ersetzung, Vokabular-Zusammenstellung, Halluzinations-Filter, Hotkey-Speicherrundlauf und Sprachauswahl.
+
+## 0.9.10 – 2026-09-03
+
+### Fixes
+- **Jeder Tastendruck wurde doppelt verarbeitet.** `HotkeyManager` betrieb einen `NSEvent`-Monitor und einen `CGEventTap` gleichzeitig auf dieselben Events. Das verlängert den Callback und provoziert genau den Timeout, wegen dem macOS den Tap deaktiviert. Der Tap ist jetzt der einzige Weg; der Monitor bleibt nur als Rückfall, falls `tapCreate` scheitert – vorher startete die App in dem Fall stillschweigend ganz ohne Hotkeys.
+
+### Features
+- **Verarbeitung abbrechbar.** Ein hängender Request blockierte bis zum Timeout jede neue Aufnahme. Im Popover erscheint während der Verarbeitung „Verarbeitung abbrechen".
+
 ## 0.9.9 – 2026-09-03
 
 ### Fixes
