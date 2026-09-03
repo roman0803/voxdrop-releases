@@ -1,5 +1,52 @@
 # Changelog
 
+## 0.10.6 – 2026-09-03
+
+### Fixes
+- **Pille landete in Electron-Apps unten über dem Dock.** Meldet eine App kein fokussiertes Element – bei Electron der Normalfall –, gab `CaretLocator` sofort `nil` zurück und übersprang den Fenster-Rückfall, den 0.10.5 eingeführt hatte. Jetzt wird auch dort die Fenstergeometrie genutzt.
+- **App fragt jetzt nach, wenn die Berechtigung im Betrieb wegfällt** – etwa nachdem ein Update das Bundle ersetzt hat. Bisher wurde nur beim Start gefragt; danach merkte man den Verlust nur daran, dass nichts mehr reagierte. Der Hinweis erklärt zusätzlich, dass ein bestehender Haken nach einem Update neu gesetzt werden muss.
+
+## 0.10.5 – 2026-09-03
+
+### Fixes
+- **Schlüsselbund fragte ständig nach dem Passwort.** Zwei Ursachen: Der API-Key wurde bei *jeder* Anfrage neu aus dem Schlüsselbund gelesen, und die Migrationsprüfung beim Start las das Passwort mit, obwohl sie nur ein Attribut brauchte. Der Key wird jetzt im Speicher gehalten, und die Prüfung liest nur noch Attribute und merkt sich ihr Ergebnis.
+- **Pille erschien unten über dem Dock statt über dem Eingabefeld.** Ohne Bedienungshilfen-Berechtigung liefert die Accessibility-API nichts, und der Rückfall war die Bildschirmmitte. Jetzt wird die Fenstergeometrie über `CGWindowListCopyWindowInfo` ermittelt – das braucht keine Berechtigung –, und die Pille sitzt am unteren Rand des aktiven Fensters.
+
+### Changes
+- Glow etwas kräftiger: höhere Grundstärke, größere Radien, deutlicherer Rand.
+
+## 0.10.4 – 2026-09-03
+
+### Features
+- **Glow um die Pille** in der Farbe des Modus – zwei Ebenen für Tiefe, im Fehlerfall orange. Während der Aufnahme folgt die Stärke dem Mikrofonpegel, danach bleibt sie ruhig.
+- **Abstand über dem Eingabefeld einstellbar** (Optionen → Anzeige, 40–300 pt, Vorgabe 140). Betrifft nur Apps, die die Cursor-Position nicht melden – dort ist der Abstand zwangsläufig geschätzt, und wer ihn sieht, kann ihn passend machen.
+
+### Fixes
+- Testlauf brach mit „runner hung before establishing connection" ab: Der modale Bedienungshilfen-Dialog beim Start blockiert im Test-Host den Runloop. Unter XCTest wird er jetzt übersprungen.
+
+## 0.10.3 – 2026-09-03
+
+### Fixes
+- **Overlay sah aus wie zwei Fenster.** Die Pille zeigte 0,14 s lang eine schmale, leere Kapsel und tauschte dann auf den vollen Inhalt – eine Choreografie, die für die Notch-Variante gedacht war. Die freistehende Pille blendet jetzt einstufig ein.
+- **Pille lag auf dem Eingabefeld statt darüber.** In Apps ohne genaue Caret-Position (Electron) wird ein Streifen am Fensterboden als Anker genommen; der war mit 56 pt niedriger als ein typisches Chat-Eingabefeld. Jetzt 96 pt, und der Anker meldet, wie genau er ist – beim Fensterrückfall gibt es zusätzlich etwas mehr Abstand.
+
+## 0.10.2 – 2026-09-03
+
+### Fixes
+- **Einstellungen wurden beim Custom-Prompt leer** – auch die Sidebar. Kein Absturz, sondern ein Layout, das unbegrenzte Höhe verlangt hat: `List` und `TextEditor` in einem `VStack` ohne Scroll-Container. Beide sind ersetzt durch eine `ScrollView` mit fester Höhe und ein mehrzeiliges Textfeld. Der Prompts-Bereich ist insgesamt scrollbar.
+
+### Changes
+- **Anzeigedauer nach dem Einfügen einstellbar** (Optionen → Anzeige): 0,4 / 0,8 / 1,2 / 2 s. Vorgabe ist jetzt 0,8 s statt 1,2 s. Fehlermeldungen bleiben unabhängig davon 12 s stehen.
+
+## 0.10.1 – 2026-09-03
+
+### Fixes
+- **„Systemeinstellungen öffnen" tat nichts.** Der Deep-Link nutzte die Adresse von vor macOS 13 (`com.apple.preference.security`); auf aktuellen Systemen läuft die ins Leere. Jetzt die richtige Adresse mit Rückfall, und zusätzlich wird der systemeigene Berechtigungsdialog angestoßen.
+- **Hotkeys blieben nach dem Erteilen der Berechtigung tot.** Der Event-Tap wurde nur einmal beim Start erzeugt – ohne Bedienungshilfen sieht er nur Events der eigenen App, weshalb Hotkeys nur im VoxDrop-Fenster griffen. Er wird jetzt automatisch neu aufgebaut, sobald die Berechtigung erteilt wird. Ein Neustart der App ist nicht mehr nötig.
+- **Einstellungen wurden beim Custom-Prompt leer.** Die Preset-Oberfläche arbeitete mit Index-Zugriffen auf ein `@Published`-Array; ein Index wird ungültig, sobald sich das Array ändert. Jetzt direkte Bindings über `ForEach($…)`.
+- **App blieb nach einer Update-Prüfung im Dock** und startete nach dem Update nicht neu. Für Sparkles Fenster wird auf `.regular` umgeschaltet, aber nie zurück – das widerspricht `LSUIElement`. Wird jetzt am Ende der Update-Sitzung zurückgesetzt.
+- Der `NSEvent`-Monitor läuft wieder parallel zum Event-Tap, doppelte Auslösungen werden herausgefiltert statt einen der beiden Wege wegzulassen.
+
 ## 0.10.0 – 2026-09-03
 
 ### Features
