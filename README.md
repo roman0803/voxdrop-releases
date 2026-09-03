@@ -89,7 +89,7 @@ The app is signed with a stable Apple **Development** certificate (Team `2M4LLPL
 If you'd rather verify the download, compare the SHA256 checksum:
 
 ```bash
-shasum -a 256 ~/Downloads/VoxDrop-0.9.9.dmg
+shasum -a 256 ~/Downloads/VoxDrop-0.10.0.dmg
 ```
 
 The result must match the contents of the `.sha256` file from the release.
