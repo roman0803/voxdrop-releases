@@ -5,12 +5,21 @@
     <description>Updates für VoxDrop.</description>
     <language>de</language>
     <item>
+      <title>Version 0.10.6</title>
+      <pubDate>Thu, 03 Sep 2026 10:13:19 +0000</pubDate>
+      <sparkle:version>20</sparkle:version>
+      <sparkle:shortVersionString>0.10.6</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li><strong>Pille landete in Electron-Apps unten über dem Dock.</strong> Meldet eine App kein fokussiertes Element – bei Electron der Normalfall –, gab <code>CaretLocator</code> sofort <code>nil</code> zurück und übersprang den Fenster-Rückfall, den 0.10.5 eingeführt hatte. Jetzt wird auch dort die Fenstergeometrie genutzt.</li><li><strong>App fragt jetzt nach, wenn die Berechtigung im Betrieb wegfällt</strong> – etwa nachdem ein Update das Bundle ersetzt hat. Bisher wurde nur beim Start gefragt; danach merkte man den Verlust nur daran, dass nichts mehr reagierte. Der Hinweis erklärt zusätzlich, dass ein bestehender Haken nach einem Update neu gesetzt werden muss.</li></ul>]]></description>
+      <enclosure url="https://github.com/roman0803/voxdrop-releases/releases/download/v0.10.6/VoxDrop-0.10.6.zip" type="application/octet-stream" length="2004094" sparkle:edSignature="rItwbMwedhtCKvKKvUeaDg+dmpT9MdZboV8gA+F8fwApSZTlzrxu8IajA9qwXYJ/2AReAU7mGcpZ5vaz0oYnBg==" />
+    </item>
+    <item>
       <title>Version 0.10.0</title>
       <pubDate>Thu, 03 Sep 2026 08:42:21 +0000</pubDate>
       <sparkle:version>14</sparkle:version>
       <sparkle:shortVersionString>0.10.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<ul><li><strong>Prompt-Presets für den Custom-Modus.</strong> Statt eines einzigen Prompts jetzt mehrere benannte – etwa „Mail", „Slack", „Ticket" –, von denen einer aktiv ist. Umschaltbar in den Einstellungen und ab zwei Presets auch direkt im Popover. Ein vorhandener Custom-Prompt wird beim ersten Start automatisch als Preset übernommen.</li><li><strong>Nochmal verarbeiten.</strong> Jeder Eintrag im Verlauf lässt sich ohne neues Diktat durch einen anderen Modus schicken. Das Ergebnis landet in der Zwischenablage und als neuer Verlaufseintrag, markiert mit „↻".</li><li>7 weitere Tests (Preset-Speicherung, aktives Preset, Rückfall bei verwaister ID, Migration des alten Prompts). Gesamt 28.</li></ul>]]></description>
+      <description>&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Prompt-Presets für den Custom-Modus.&lt;/strong&gt; Statt eines einzigen Prompts jetzt mehrere benannte – etwa „Mail", „Slack", „Ticket" –, von denen einer aktiv ist. Umschaltbar in den Einstellungen und ab zwei Presets auch direkt im Popover. Ein vorhandener Custom-Prompt wird beim ersten Start automatisch als Preset übernommen.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Nochmal verarbeiten.&lt;/strong&gt; Jeder Eintrag im Verlauf lässt sich ohne neues Diktat durch einen anderen Modus schicken. Das Ergebnis landet in der Zwischenablage und als neuer Verlaufseintrag, markiert mit „↻".&lt;/li&gt;&lt;li&gt;7 weitere Tests (Preset-Speicherung, aktives Preset, Rückfall bei verwaister ID, Migration des alten Prompts). Gesamt 28.&lt;/li&gt;&lt;/ul&gt;</description>
       <enclosure url="https://github.com/roman0803/voxdrop-releases/releases/download/v0.10.0/VoxDrop-0.10.0.zip" type="application/octet-stream" length="1976411" sparkle:edSignature="mD2CWlWku9oYTL7baxFQNFlTV1n8vhN3Wn2kQK28j4rrLbLrYwgLz8nCsgdMmVtjiPwtHHXjScW0J7/8kyNyBQ==" />
     </item>
     <item>
