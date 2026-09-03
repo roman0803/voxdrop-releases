@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.9.9 – 2026-09-03
+
+### Fixes
+- **API-Key bleibt auf diesem Gerät.** Der Schlüsselbund-Eintrag nutzte `kSecAttrAccessibleAfterFirstUnlock` und konnte damit in Backups wandern; jetzt `…ThisDeviceOnly`. Bestehende Installationen werden beim Start einmalig migriert – der Schlüssel muss nicht neu eingegeben werden.
+- **Verwaiste Aufnahmen werden aufgeräumt.** Nach einem Absturz blieb die Temp-Datei liegen. Beim Start werden `voxdrop_*.m4a` entfernt, und laufende Aufnahmen bekommen die Dateirechte `0600`.
+- **Weniger im System-Log.** Die vollständige Groq-Antwort landete im systemweit lesbaren Unified Log, jetzt auf 500 Zeichen gekürzt. Ein übrig gebliebenes Debug-Log ist entfernt.
+
+### Features
+- **Datenschutzhinweis** in Einstellungen → API: benennt, dass jede Aufnahme an api.groq.com geht, dass die Modi Plus, Emoji, Übersetzen und Custom den Text zusätzlich ans Sprachmodell schicken, und was lokal bleibt.
+
 ## 0.9.8 – 2026-09-03
 
 ### Features
