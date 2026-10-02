@@ -5,12 +5,21 @@
     <description>Updates für VoxDrop.</description>
     <language>de</language>
     <item>
+      <title>Version 0.11.0</title>
+      <pubDate>Fri, 02 Oct 2026 13:45:40 +0000</pubDate>
+      <sparkle:version>21</sparkle:version>
+      <sparkle:shortVersionString>0.11.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li><strong>Nachbearbeitung schlug bei frischen Installationen immer fehl.</strong> Das voreingestellte Modell <code>llama-3.3-70b-versatile</code> wurde von Groq abgeschaltet. Plus, Emoji, Übersetzen und Custom endeten dadurch mit einem Fehler – nur der Standardmodus lief, weil er kein Modell braucht. Neue Vorgabe: <code>openai/gpt-oss-120b</code>. Wer das Feld nie angefasst hat, bekommt das automatisch.</li><li><strong>Modell-Auswahl als Dropdown</strong> (Einstellungen → Optionen → Nachbearbeitung). Die Liste wird direkt bei Groq abgefragt und zeigt nur Modelle, die der eigene Schlüssel nutzen darf, samt Kontextfenster. Spracherkennungs-, Sprachausgabe- und Schutzmodelle sind herausgefiltert. Die Liste wird zwischengespeichert, steht also auch offline sofort bereit; „Eigenes eintragen" bleibt als Freitextfeld erhalten.</li></ul>]]></description>
+      <enclosure url="https://github.com/roman0803/voxdrop-releases/releases/download/v0.11.0/VoxDrop-0.11.0.zip" type="application/octet-stream" length="2046018" sparkle:edSignature="SKapc5AVDDx1x+Z0UiI8rN3mCHphwjvxJlEae5wNuMqL7kqjfc6OnDCRicCKAZCR7QjahKRJvNvGDi6VUiWrDw==" />
+    </item>
+    <item>
       <title>Version 0.10.6</title>
       <pubDate>Thu, 03 Sep 2026 10:13:19 +0000</pubDate>
       <sparkle:version>20</sparkle:version>
       <sparkle:shortVersionString>0.10.6</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<ul><li><strong>Pille landete in Electron-Apps unten über dem Dock.</strong> Meldet eine App kein fokussiertes Element – bei Electron der Normalfall –, gab <code>CaretLocator</code> sofort <code>nil</code> zurück und übersprang den Fenster-Rückfall, den 0.10.5 eingeführt hatte. Jetzt wird auch dort die Fenstergeometrie genutzt.</li><li><strong>App fragt jetzt nach, wenn die Berechtigung im Betrieb wegfällt</strong> – etwa nachdem ein Update das Bundle ersetzt hat. Bisher wurde nur beim Start gefragt; danach merkte man den Verlust nur daran, dass nichts mehr reagierte. Der Hinweis erklärt zusätzlich, dass ein bestehender Haken nach einem Update neu gesetzt werden muss.</li></ul>]]></description>
+      <description>&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Pille landete in Electron-Apps unten über dem Dock.&lt;/strong&gt; Meldet eine App kein fokussiertes Element – bei Electron der Normalfall –, gab &lt;code&gt;CaretLocator&lt;/code&gt; sofort &lt;code&gt;nil&lt;/code&gt; zurück und übersprang den Fenster-Rückfall, den 0.10.5 eingeführt hatte. Jetzt wird auch dort die Fenstergeometrie genutzt.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;App fragt jetzt nach, wenn die Berechtigung im Betrieb wegfällt&lt;/strong&gt; – etwa nachdem ein Update das Bundle ersetzt hat. Bisher wurde nur beim Start gefragt; danach merkte man den Verlust nur daran, dass nichts mehr reagierte. Der Hinweis erklärt zusätzlich, dass ein bestehender Haken nach einem Update neu gesetzt werden muss.&lt;/li&gt;&lt;/ul&gt;</description>
       <enclosure url="https://github.com/roman0803/voxdrop-releases/releases/download/v0.10.6/VoxDrop-0.10.6.zip" type="application/octet-stream" length="2004094" sparkle:edSignature="rItwbMwedhtCKvKKvUeaDg+dmpT9MdZboV8gA+F8fwApSZTlzrxu8IajA9qwXYJ/2AReAU7mGcpZ5vaz0oYnBg==" />
     </item>
     <item>
