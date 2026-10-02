@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.11.0 – 2026-10-02
+
+### Fixes
+- **Nachbearbeitung schlug bei frischen Installationen immer fehl.** Das voreingestellte Modell `llama-3.3-70b-versatile` wurde von Groq abgeschaltet. Plus, Emoji, Übersetzen und Custom endeten dadurch mit einem Fehler – nur der Standardmodus lief, weil er kein Modell braucht. Neue Vorgabe: `openai/gpt-oss-120b`. Wer das Feld nie angefasst hat, bekommt das automatisch.
+
+### Features
+- **Modell-Auswahl als Dropdown** (Einstellungen → Optionen → Nachbearbeitung). Die Liste wird direkt bei Groq abgefragt und zeigt nur Modelle, die der eigene Schlüssel nutzen darf, samt Kontextfenster. Spracherkennungs-, Sprachausgabe- und Schutzmodelle sind herausgefiltert. Die Liste wird zwischengespeichert, steht also auch offline sofort bereit; „Eigenes eintragen" bleibt als Freitextfeld erhalten.
+
 ## 0.10.6 – 2026-09-03
 
 ### Fixes
